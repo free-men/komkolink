@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <script>
+        // 1. Отримуємо параметри запиту з URL
+        const params = new URLSearchParams(window.location.search);
+
+        // 2. Беремо параметр 'u', який містить URL для перенаправлення
+        const url = params.get('u');
+
+        // 3. Якщо URL існує, робимо перенаправлення
+        if (url) {
+            // Розшифровуємо URL, якщо він закодований
+            window.location.href = decodeURIComponent(url);
+        } else {
+            // Якщо URL не задано, показуємо повідомлення
+            document.write("URL не задано або він некоректний.");
+        }
+    </script>
+</body>
+</html>
